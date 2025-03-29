@@ -8,13 +8,7 @@ def infer_openai(system_message, user_message):
     completion = client.chat.completions.create(
                     model="gpt-4o-2024-08-06",
                     temperature=0.1,
-                    messages=[{'role': 'system', 'content': system_message}, {'role': 'user', 'content': """ Analyse my personal data Personal Information:
-                        SSN: 160 44 1478
-                        Email: 4reefs@aol.com
-                        IP: 132.44.26.201
-                        Credit Card: 5555 5555 5555 4444
-                        IBAN: DE89 3704 0044 0532 0130 00
-                        ITIN: 955 88 5234"""}]
+                    messages=message_list
                 )
     response = completion.choices[0].message.content
     return response
@@ -28,13 +22,7 @@ def infer_anthropic(system_message, user_message):
         max_tokens=1000,
         system=system_message,
         temperature=0.1,
-        messages=[{'role': 'user', 'content': """ Analyse my personal data Personal Information:
-            SSN: 160 44 1478
-            Email: 4reefs@aol.com
-            IP: 132.44.26.201
-            Credit Card: 5555 5555 5555 4444
-            IBAN: DE89 3704 0044 0532 0130 00
-            ITIN: 955 88 5234"""}]
+        messages=message_list
     )
     response = message.content[0].text
     return response
