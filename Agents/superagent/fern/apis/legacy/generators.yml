@@ -1,0 +1,4 @@
+api:
+  path: ./openapi/openapi.yaml
+  settings:
+    use-title: false
