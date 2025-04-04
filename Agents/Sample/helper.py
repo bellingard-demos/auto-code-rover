@@ -1,3 +1,10 @@
+test_var = [
+        {
+            'role': 'user',
+            'content': f'JUST a test Email: 4reefs@aol.com',
+        },
+    ]
+
 def test(dataset):
     return [
         {
