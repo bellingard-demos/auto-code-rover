@@ -1,4 +1,4 @@
-def OPENAI_GEN_HYPO_MESSAGES(dataset):
+def test(dataset):
     return [
         {
             'role': 'system',
